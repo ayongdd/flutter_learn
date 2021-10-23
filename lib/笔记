@@ -1,0 +1,18 @@
+https://javiercbk.github.io/json_to_dart/   //json转化成dart;
+
+插件:shared_preferences  //本地存储 相当于 localStorage
+插件: convert  //修复中文乱码
+convert用法: Utf8Decoder utf8Decoder = Utf8Decoder();var result = json.decode(utf8decoder.convert(response.bodyBytes));
+插件:flutter_webview_plugin  //app打开网页插件
+
+string 颜色值转换成int 颜色值：
+String colors = 'ffffff';
+Color(int.parse('0xff'+colors));
+
+获取屏幕宽度： MediaQuery.of(context).size.width/2 - 5;
+轮播插件：flutter_swiper;
+
+flutter与native通讯的PlatformChannel 的三种不同类型的种类：
+BasicMessageChannel：用于传递字符串和半结构化的信息，持续通信，收到消息后可以回复本次消息。
+MethodChannel：用于传递方法调用（method invocation）一次性通信，如 Flutter 调用 Native 拍照。
+EventChannel：用于数据流（event streams）的通信，持续通信，收到消息后无法回复此次消息，通过长用于Native向Dart的通信，如：手机电量变化、网络连接变化、陀螺仪、传感器等。
